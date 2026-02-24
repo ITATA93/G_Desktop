@@ -1,0 +1,125 @@
+﻿======================================================================
+  Antigravity Ecosystem -- Normalization Audit
+  12 projects | 6 required | 4 known creds | 2 generic patterns
+======================================================================
+
+  [A] AG_Analizador_RCE
+      Required: 7/7 (100%) | Recommended: 1/7 (14%) | GIT | TASKS-OK
+      Missing (optional):    CLAUDE.md, AGENTS.md, .env.example, docs/standards/output_governance.md, .gemini/, .agent/
+
+  [A] AG_Consultas
+      Required: 7/7 (100%) | Recommended: 5/7 (71%) | GIT | TASKS-OK
+      Missing (optional):    AGENTS.md, config/
+
+  [A] AG_DeepResearch_Salud_Chile
+      Required: 7/7 (100%) | Recommended: 6/7 (85%) | GIT | TASKS-OK
+      Missing (optional):    AGENTS.md
+
+  [B] AG_Hospital
+      Required: 6/7 (85%) | Recommended: 0/7 (0%) | GIT | TASKS-OK
+      MISSING (required):    README.md
+      Missing (optional):    CLAUDE.md, AGENTS.md, .env.example, docs/standards/output_governance.md, config/, .gemini/, .agent/
+
+  [A] AG_Hospital_Organizador
+      Required: 7/7 (100%) | Recommended: 5/7 (71%) | GIT | TASKS-OK
+      Missing (optional):    AGENTS.md, config/
+
+  [A] AG_Informatica_Medica
+      Required: 7/7 (100%) | Recommended: 7/7 (100%) | GIT | TASKS-OK
+
+  [A] AG_Lists_Agent
+      Required: 7/7 (100%) | Recommended: 4/7 (57%) | GIT | TASKS-OK
+      Missing (optional):    AGENTS.md, config/, .gemini/
+
+  [A] AG_NB_Apps
+      Required: 7/7 (100%) | Recommended: 5/7 (71%) | GIT | TASKS-OK
+      Missing (optional):    AGENTS.md, config/
+
+  [A] AG_Notebook
+      Required: 7/7 (100%) | Recommended: 2/7 (28%) | GIT | TASKS-OK
+      Missing (optional):    CLAUDE.md, AGENTS.md, docs/standards/output_governance.md, config/, .gemini/
+
+  [A] AG_SD_Plantilla
+      Required: 7/7 (100%) | Recommended: 1/7 (14%) | GIT | TASKS-OK
+      Missing (optional):    CLAUDE.md, AGENTS.md, docs/standards/output_governance.md, config/, .gemini/, .agent/
+
+  [A] AG_SV_Agent
+      Required: 7/7 (100%) | Recommended: 1/7 (14%) | GIT | TASKS-OK
+      Missing (optional):    CLAUDE.md, AGENTS.md, docs/standards/output_governance.md, config/, .gemini/, .agent/
+
+  [A] AG_TrakCare_Explorer
+      Required: 7/7 (100%) | Recommended: 1/7 (14%) | GIT | TASKS-OK
+      Missing (optional):    CLAUDE.md, AGENTS.md, .env.example, config/, .gemini/, .agent/
+
+======================================================================
+  Summary
+======================================================================
+    A: ########### (11)
+    B: # (1)
+
+    Security findings:  0
+    Missing required:  1
+
+    STATUS: 1 items need attention
+
+
+======================================================================
+  Content Quality & Autonomy & Health Score
+======================================================================
+
+  AG_Analizador_RCE  |  Health: 74/100
+      Quality: A+ (5/5)  Autonomy: Manual (1/6)
+      Autonomy gaps:  session_protocol, has_workflows, subagents_defined, dispatch_available, memory_structure
+
+  AG_Consultas  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   gemini_keywords
+      Autonomy gaps:  tasks_awareness
+
+  AG_DeepResearch_Salud_Chile  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   gemini_keywords
+      Autonomy gaps:  tasks_awareness
+
+  AG_Hospital  |  Health: 64/100
+      Quality: A+ (5/5)  Autonomy: Manual (1/6)
+      Autonomy gaps:  session_protocol, has_workflows, subagents_defined, dispatch_available, memory_structure
+
+  AG_Hospital_Organizador  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   gemini_keywords
+      Autonomy gaps:  tasks_awareness
+
+  AG_Informatica_Medica  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   gemini_keywords
+      Autonomy gaps:  tasks_awareness
+
+  AG_Lists_Agent  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   changelog_active
+      Autonomy gaps:  memory_structure
+
+  AG_NB_Apps  |  Health: 88/100
+      Quality: B+ (4/5)  Autonomy: Auto (5/6)
+      Quality gaps:   gemini_keywords
+      Autonomy gaps:  tasks_awareness
+
+  AG_Notebook  |  Health: 79/100
+      Quality: A+ (5/5)  Autonomy: Manual (2/6)
+      Autonomy gaps:  session_protocol, subagents_defined, dispatch_available, memory_structure
+
+  AG_SD_Plantilla  |  Health: 74/100
+      Quality: A+ (5/5)  Autonomy: Manual (1/6)
+      Autonomy gaps:  session_protocol, has_workflows, subagents_defined, dispatch_available, memory_structure
+
+  AG_SV_Agent  |  Health: 74/100
+      Quality: A+ (5/5)  Autonomy: Manual (1/6)
+      Autonomy gaps:  session_protocol, has_workflows, subagents_defined, dispatch_available, memory_structure
+
+  AG_TrakCare_Explorer  |  Health: 74/100
+      Quality: A+ (5/5)  Autonomy: Manual (1/6)
+      Autonomy gaps:  session_protocol, has_workflows, subagents_defined, dispatch_available, memory_structure
+
+  Ecosystem Average Health: 80/100
+

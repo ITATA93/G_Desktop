@@ -1,0 +1,78 @@
+# Research Topics — Antigravity Workspace
+# Topics that agents should research periodically to keep knowledge current.
+# Used by: .agent/workflows/deep-research-update.md
+
+schedule: "weekly" # weekly | biweekly | on-demand
+
+topics:
+  # === Core Tools ===
+  - name: "Claude Code CLI"
+    category: tools
+    last_researched: "2026-02-07"
+    keywords:
+      - claude code
+      - opus 4
+      - anthropic CLI
+      - agent teams
+      - MCP servers
+    focus: "New commands, agent teams features, billing changes, MCP integrations"
+
+  - name: "Gemini CLI"
+    category: tools
+    last_researched: "2026-02-07"
+    keywords:
+      - gemini CLI
+      - google AI studio
+      - gemini flash
+      - gemini pro
+    focus: "New models, skill system updates, deep research API changes"
+
+  - name: "Codex CLI"
+    category: tools
+    last_researched: "2026-02-07"
+    keywords:
+      - openai codex CLI
+      - codex agent
+      - deep research
+    focus: "Task tool availability, new capabilities, effort levels"
+
+  # === Platforms ===
+  - name: "NocoBase"
+    category: platform
+    last_researched: "2026-02-07"
+    keywords:
+      - nocobase
+      - nocobase plugins
+      - nocobase API
+    focus: "New plugins, API changes, migration guides, workflow engine updates"
+
+  # === Compliance ===
+  - name: "Chilean Digital Health Standards"
+    category: compliance
+    last_researched: "2026-02-07"
+    keywords:
+      - ley 21180
+      - ley 21663
+      - ley 21668
+      - FHIR Chile
+      - interoperabilidad salud chile
+    focus: "New circulares, implementation deadlines, technical specifications"
+
+  # === Infrastructure ===
+  - name: "Proxmox VE"
+    category: infrastructure
+    last_researched: "2026-02-07"
+    keywords:
+      - proxmox
+      - proxmox VE 8
+      - proxmox API
+    focus: "Security patches, new features, API changes"
+
+  - name: "Docker & Container Orchestration"
+    category: infrastructure
+    last_researched: "2026-02-05"
+    keywords:
+      - docker compose
+      - docker engine
+      - container security
+    focus: "Compose v2 features, security best practices, multi-stage builds"

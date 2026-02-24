@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "description": "Antigravity environment definitions. Each environment maps to a physical machine/VM.",
+  "environments": {
+    "notebook": {
+      "base_path": "C:\\_Repositorio",
+      "projects_dirs": ["AG_Proyectos"],
+      "plantilla_dir": "AG_Plantilla",
+      "capabilities": ["git", "python", "docker"],
+      "description": "Personal notebook - primary development",
+      "is_default": true
+    },
+    "hetzner": {
+      "base_path": "/opt/antigravity",
+      "projects_dirs": ["AG_Proyectos"],
+      "plantilla_dir": "AG_Plantilla",
+      "capabilities": ["git", "python", "docker", "proxmox"],
+      "description": "Hetzner server - test environment"
+    },
+    "desktop": {
+      "base_path": "W:\\Antigravity_OS",
+      "projects_dirs": [
+        "00_CORE",
+        "01_HOSPITAL_PRIVADO",
+        "02_HOSPITAL_PUBLICO"
+      ],
+      "plantilla_dir": "00_CORE\\AG_Plantilla",
+      "capabilities": ["git", "python"]
+    }
+  },
+  "active_environment": "desktop",
+  "env_var_override": "AG_ENV"
+}

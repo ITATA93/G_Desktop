@@ -1,0 +1,78 @@
+{
+  "export_version": "1.0",
+  "generated": "2026-02-22",
+  "source": "AG_Orquesta_Desk",
+  "target": "GEN_OS PostgreSQL (antigravity database)",
+
+  "projects": [
+    {"id": "ag-orquesta", "name": "AG_Orquesta_Desk", "type": "orchestrator", "domain": "00_CORE", "status": "active", "phase": 3, "role": "master-orchestrator"},
+    {"id": "ag-plantilla", "name": "AG_Plantilla", "type": "template", "domain": "00_CORE", "status": "active", "phase": 2},
+    {"id": "ag-notebook", "name": "AG_Notebook", "type": "satellite", "domain": "00_CORE", "status": "active", "autonomy_score": 50},
+    {"id": "ag-sv-agent", "name": "AG_SV_Agent", "type": "satellite", "domain": "00_CORE", "status": "active", "autonomy_score": 50},
+    {"id": "ag-analizador-rce", "name": "AG_Analizador_RCE", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-consultas", "name": "AG_Consultas", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-deepresearch", "name": "AG_DeepResearch_Salud_Chile", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-hospital", "name": "AG_Hospital", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active", "autonomy_score": 50},
+    {"id": "ag-hospital-org", "name": "AG_Hospital_Organizador", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-informatica", "name": "AG_Informatica_Medica", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-lists", "name": "AG_Lists_Agent", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-trakcare", "name": "AG_TrakCare_Explorer", "type": "satellite", "domain": "01_HOSPITAL_PRIVADO", "status": "active"},
+    {"id": "ag-nb-apps", "name": "AG_NB_Apps", "type": "satellite", "domain": "02_HOSPITAL_PUBLICO", "status": "active"},
+    {"id": "ag-sd-plantilla", "name": "AG_SD_Plantilla", "type": "satellite", "domain": "02_HOSPITAL_PUBLICO", "status": "active", "autonomy_score": 50}
+  ],
+
+  "prompts": [
+    {"id": "system-researcher", "version": 1, "type": "system", "vendor": "codex", "content": "You are the Deep Research Agent. Investigate documentation, APIs, best practices with full citations. Read-only. Always provide primary source URLs."},
+    {"id": "system-code-reviewer", "version": 1, "type": "system", "vendor": "claude", "content": "You are the Code Reviewer and Security Auditor. Review code for bugs, security, governance. Report only. 3 passes: security, logic, style."},
+    {"id": "system-code-analyst", "version": 1, "type": "system", "vendor": "gemini", "content": "You are the Code Analyst. Analyze code and architecture. Read-only. Request ALL relevant files rather than fragments."},
+    {"id": "system-doc-writer", "version": 1, "type": "system", "vendor": "gemini", "content": "You are the Documentation Writer. Maintain docs. Read before modifying. Follow output_governance.md: no emojis, UTF-8, structured."},
+    {"id": "system-test-writer", "version": 1, "type": "system", "vendor": "gemini", "content": "You are the Test Engineer. Create tests with mocks. Never use real data. Cover edge cases and security."},
+    {"id": "system-db-analyst", "version": 1, "type": "system", "vendor": "claude", "content": "You are the Database Analyst. NEVER execute DELETE/DROP/UPDATE without confirmation. Focus on performance, security, data integrity."},
+    {"id": "system-deployer", "version": 1, "type": "system", "vendor": "gemini", "content": "You are the Deployment Engineer. Docker, CI/CD, IaC. Never include secrets in files."}
+  ],
+
+  "skills": [
+    {"id": "cli-version-verify", "name": "CLI Version Compatibility", "source": "R-02", "trigger": "/cli-verify", "status": "planned"},
+    {"id": "mcp-deprecation-audit", "name": "MCP Deprecation Audit", "source": "R-03", "trigger": "/mcp-audit", "status": "planned"},
+    {"id": "template-drift-check", "name": "Template Drift Check", "source": "R-01", "trigger": "/template-drift", "status": "planned"},
+    {"id": "health-compliance-matrix", "name": "Health Compliance Matrix", "source": "R-05", "trigger": "/compliance-matrix", "status": "planned"},
+    {"id": "ecosystem-scorecard", "name": "Ecosystem Scorecard", "source": "R-07", "trigger": "/scorecard", "status": "planned"},
+    {"id": "agentic-security-eval", "name": "Agentic Security Evaluation", "source": "R-08", "trigger": "/security-eval", "status": "planned"}
+  ],
+
+  "workflows": [
+    {"id": "W-020", "name": "p0_emergency_fixes", "owner": "lead-orchestrator", "status": "active", "phase": "P0 (0-7d)"},
+    {"id": "W-021", "name": "p1_mcp_migration", "owner": "lead-orchestrator", "status": "planned", "phase": "P1 (7-30d)"},
+    {"id": "W-022", "name": "p2_template_standardization", "owner": "lead-orchestrator", "status": "planned", "phase": "P2 (30-60d)"},
+    {"id": "W-023", "name": "p3_compliance_pilots", "owner": "lead-orchestrator", "status": "planned", "phase": "P3 (60-90d)"},
+    {"id": "W-030", "name": "continuous_research_cadence", "owner": "researcher", "status": "active", "phase": "continuous"}
+  ],
+
+  "memories": {
+    "research": [
+      {"id": "R-01", "title": "Auditoria Tecnica Base", "date": "2026-02-22", "priority": "P0", "key_finding": "Credential scanner, dispatch Linux, auto-memory path traversal, Unicode failures"},
+      {"id": "R-02", "title": "CLI Agentico Stack", "date": "2026-02-22", "priority": "P1", "key_finding": "3 CLIs need version pinning, weekly smoke tests, consolidated approval policies"},
+      {"id": "R-03", "title": "MCP Protocol and Servers", "date": "2026-02-22", "priority": "P1", "key_finding": "GitHub and Brave MCP deprecated, Fetch needs domain allowlist"},
+      {"id": "R-04", "title": "Platforms: NocoBase, Docker, Proxmox", "date": "2026-02-22", "priority": "P1-P2", "key_finding": "NocoBase v2 requires prod/innovation split, Proxmox VE9 canary upgrade needed"},
+      {"id": "R-05", "title": "Chile Health Regulatory Framework", "date": "2026-02-22", "priority": "P3", "key_finding": "3 laws (21.180, 21.663, 21.668), MINSAL FHIR/CDA standards, affected projects identified"},
+      {"id": "R-06", "title": "Apps and Agents Function Map", "date": "2026-02-22", "priority": "P0-P2", "key_finding": "14 projects, 4 clusters, 4 projects at 50/100 autonomy"},
+      {"id": "R-07", "title": "Master Roadmap 0-30-60-90", "date": "2026-02-22", "priority": "ALL", "key_finding": "46 searches, 4 KPI categories, continuous research cadence defined"},
+      {"id": "R-08", "title": "Agentic Security and Eval Framework", "date": "2026-02-22", "priority": "P1-P3", "key_finding": "OWASP LLM + NIST AI RMF, 5 minimum controls, 3-stage evaluation"}
+    ],
+    "semantic": [
+      {"topic": "Agent Manifest", "summary": "7 agents, 4 teams, 3 vendors, opus-4.6 supervisor"},
+      {"topic": "Ecosystem Topology", "summary": "15 projects across 3 domains (00_CORE, 01_HOSPITAL_PRIVADO, 02_HOSPITAL_PUBLICO)"},
+      {"topic": "Shared Responsibility", "summary": "AG_Orquesta: cross_task, propagate, audit_ecosystem. GEN_OS: audit_suite, workflow_engine, secret_scanner"}
+    ]
+  },
+
+  "import_stats": {
+    "projects": 14,
+    "prompts": 7,
+    "skills": 6,
+    "workflows": 5,
+    "tasks": 10,
+    "memories": 11,
+    "total_records": 53
+  }
+}

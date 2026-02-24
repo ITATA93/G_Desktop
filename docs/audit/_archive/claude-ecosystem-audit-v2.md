@@ -1,0 +1,1 @@
+﻿It looks like your message came through as `$CurrentPrompt` ÔÇö a variable that wasn't resolved. How can I help you today? Feel free to describe what you'd like to work on, or use one of the available commands like `/project-status` or `/help`.

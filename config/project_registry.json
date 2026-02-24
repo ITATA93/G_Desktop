@@ -1,0 +1,223 @@
+{
+  "registry_version": "3.0",
+  "last_audit": "2026-02-22",
+  "template_version": "2.3",
+  "categories": {
+    "live": {
+      "icon": "🟢",
+      "description": "Production-deployed projects"
+    },
+    "hospital-personal": {
+      "icon": "🏥",
+      "description": "Personal hospital/clinical projects"
+    },
+    "hospital-equipo": {
+      "icon": "🏗️",
+      "description": "Team hospital infrastructure & apps"
+    },
+    "proyectos": {
+      "icon": "📊",
+      "description": "Business/research projects"
+    },
+    "admin": {
+      "icon": "⚙️",
+      "description": "Environment organizers and orchestrators"
+    },
+    "personales": {
+      "icon": "👤",
+      "description": "Personal tools, assistants, organizers"
+    },
+    "privado": {
+      "icon": "🔒",
+      "description": "Private/sensitive projects"
+    }
+  },
+  "project_types": {
+    "python": {
+      "checks": ["requirements.txt", "setup.py OR pyproject.toml"],
+      "icon": "🐍"
+    },
+    "nocobase": {
+      "checks": ["app-spec/app.yaml", "docker-compose.yml"],
+      "icon": "📦"
+    },
+    "infrastructure": {
+      "checks": ["docker-compose.yml", "Dockerfile"],
+      "icon": "🏗️"
+    },
+    "documentation": { "checks": ["mkdocs.yml OR docs/"], "icon": "📚" },
+    "template": { "checks": ["_template/"], "icon": "🧩" }
+  },
+  "projects": [
+    {
+      "id": "ag_orquesta_desk",
+      "name": "AG_Orquesta_Desk",
+      "path_relative": "00_CORE/AG_Orquesta_Desk",
+      "type": "documentation",
+      "category": "admin",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Orquesta_Desk",
+      "creation_date": "2026-02-02",
+      "last_update": "2026-02-22",
+      "role": "master-orchestrator"
+    },
+    {
+      "id": "gen_os",
+      "name": "GEN_OS",
+      "path_relative": "00_CORE/GEN_OS",
+      "type": "infrastructure",
+      "category": "admin",
+      "status": "active",
+      "creation_date": "2026-02-21",
+      "last_update": "2026-02-22",
+      "role": "control-plane"
+    },
+    {
+      "id": "ag_plantilla",
+      "name": "AG_Plantilla",
+      "path_relative": "00_CORE/AG_Plantilla",
+      "type": "template",
+      "category": "admin",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Plantilla",
+      "creation_date": "2026-02-02",
+      "last_update": "2026-02-20",
+      "version_control": {
+        "template_version": "2.3",
+        "manifest_version": "3.0"
+      }
+    },
+    {
+      "id": "ag_analizador_rce",
+      "name": "AG_Analizador_RCE",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Analizador_RCE",
+      "type": "python",
+      "category": "hospital-personal",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Analizador_RCE",
+      "creation_date": "2026-02-04",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_consultas",
+      "name": "AG_Consultas",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Consultas",
+      "type": "python",
+      "category": "hospital-personal",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Consultas",
+      "creation_date": "2026-02-04",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_deepresearch_salud_chile",
+      "name": "AG_DeepResearch_Salud_Chile",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_DeepResearch_Salud_Chile",
+      "type": "python",
+      "category": "proyectos",
+      "status": "active",
+      "github_repo": "ITATA93/AG_DeepResearch_Salud_Chile",
+      "creation_date": "2026-02-07",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_hospital",
+      "name": "AG_Hospital",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Hospital",
+      "type": "documentation",
+      "category": "hospital-personal",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Hospital",
+      "creation_date": "2026-02-13",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_hospital_organizador",
+      "name": "AG_Hospital_Organizador",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Hospital_Organizador",
+      "type": "nocobase",
+      "category": "hospital-equipo",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Hospital_Organizador",
+      "creation_date": "2026-02-02",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_informatica_medica",
+      "name": "AG_Informatica_Medica",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Informatica_Medica",
+      "type": "documentation",
+      "category": "proyectos",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Informatica_Medica",
+      "creation_date": "2026-02-14",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_lists_agent",
+      "name": "AG_Lists_Agent",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_Lists_Agent",
+      "type": "python",
+      "category": "personales",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Lists_Agent",
+      "creation_date": "2026-02-13",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_nb_apps",
+      "name": "AG_NB_Apps",
+      "path_relative": "02_HOSPITAL_PUBLICO/AG_NB_Apps",
+      "type": "nocobase",
+      "category": "hospital-equipo",
+      "status": "active",
+      "github_repo": "ITATA93/AG_NB_Apps",
+      "creation_date": "2026-02-04",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_notebook",
+      "name": "AG_Notebook",
+      "path_relative": "00_CORE/AG_Notebook",
+      "type": "documentation",
+      "category": "admin",
+      "status": "active",
+      "github_repo": "ITATA93/AG_Notebook",
+      "creation_date": "2026-02-02",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_sd_plantilla",
+      "name": "AG_SD_Plantilla",
+      "path_relative": "02_HOSPITAL_PUBLICO/AG_SD_Plantilla",
+      "type": "python",
+      "category": "privado",
+      "status": "active",
+      "github_repo": "ITATA93/AG_SD_Plantilla",
+      "creation_date": "2026-02-05",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_sv_agent",
+      "name": "AG_SV_Agent",
+      "path_relative": "00_CORE/AG_SV_Agent",
+      "type": "infrastructure",
+      "category": "admin",
+      "status": "active",
+      "github_repo": "ITATA93/AG_SV_Agent",
+      "creation_date": "2026-02-04",
+      "last_update": "2026-02-17"
+    },
+    {
+      "id": "ag_trakcare_explorer",
+      "name": "AG_TrakCare_Explorer",
+      "path_relative": "01_HOSPITAL_PRIVADO/AG_TrakCare_Explorer",
+      "type": "python",
+      "category": "hospital-personal",
+      "status": "active",
+      "github_repo": "ITATA93/AG_TrakCare_Explorer",
+      "creation_date": "2026-02-17",
+      "last_update": "2026-02-17"
+    }
+  ]
+}

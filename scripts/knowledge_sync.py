@@ -1,5 +1,5 @@
 """
-Knowledge Sync — AG_Plantilla
+Knowledge Sync — G_Plantilla
 Replaces the primitive memory_sync.py with structured knowledge extraction.
 
 Usage:
@@ -567,7 +567,7 @@ def main():
     if sys.stdout.encoding != "utf-8":
         sys.stdout.reconfigure(encoding="utf-8")
 
-    print("🧠 Knowledge Sync — AG_Plantilla")
+    print("🧠 Knowledge Sync — G_Plantilla")
     print("=" * 40)
 
     # Parse sources

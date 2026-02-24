@@ -8,7 +8,7 @@ Can preview diffs and apply approved changes across all AG projects.
 
 Usage:
     python scripts/propagate.py status              # Show drift summary
-    python scripts/propagate.py diff AG_Hospital     # Show diffs for one project
+    python scripts/propagate.py diff G_Hospital     # Show diffs for one project
     python scripts/propagate.py apply --file GEMINI.md  # Propagate a specific file
     python scripts/propagate.py apply --all          # Propagate all drifted files
 """
@@ -36,8 +36,8 @@ try:
 except ImportError:
     # Fallback if env_resolver is not in path
     REPO_ROOT = Path(r"C:\_Repositorio")
-    PROJECTS_DIRS = [REPO_ROOT / "AG_Proyectos"]
-    PLANTILLA_DIR = REPO_ROOT / "AG_Plantilla"
+    PROJECTS_DIRS = [REPO_ROOT / "G_Proyectos"]
+    PLANTILLA_DIR = REPO_ROOT / "G_Plantilla"
     TEMPLATE_DIR = PLANTILLA_DIR / "_template" / "workspace"
 
 # Files tracked for propagation (relative to project root)
@@ -62,7 +62,7 @@ def get_all_projects() -> list[tuple[str, Path]]:
     for pdir in PROJECTS_DIRS:
         if pdir.is_dir():
             for d in sorted(pdir.iterdir()):
-                if d.is_dir() and d.name.startswith("AG_"):
+                if d.is_dir() and d.name.startswith("G_"):
                     projects.append((d.name, d))
     return projects
 
@@ -235,7 +235,7 @@ def main() -> None:
     sub.add_parser("status", help="Show drift summary")
 
     p_diff = sub.add_parser("diff", help="Show diffs for a project")
-    p_diff.add_argument("project", help="Project name (e.g., AG_Hospital)")
+    p_diff.add_argument("project", help="Project name (e.g., G_Hospital)")
 
     p_apply = sub.add_parser("apply", help="Apply template to projects")
     p_apply.add_argument("--file", help="Specific file to propagate")

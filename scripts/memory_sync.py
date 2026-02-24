@@ -30,8 +30,8 @@ try:
 except ImportError:
     # Fallback
     REPO_ROOT = Path(r"C:\_Repositorio")
-    PROJECTS_DIRS = [REPO_ROOT / "AG_Proyectos"]
-    PLANTILLA_DIR = REPO_ROOT / "AG_Plantilla"
+    PROJECTS_DIRS = [REPO_ROOT / "G_Proyectos"]
+    PLANTILLA_DIR = REPO_ROOT / "G_Plantilla"
 
 BRAIN_PATH = PLANTILLA_DIR / ".gemini" / "brain"
 EPISODES_PATH = BRAIN_PATH / "episodes"
@@ -43,11 +43,11 @@ DASHBOARD_PATH = PLANTILLA_DIR / "docs" / "ecosystem-status.md"
 
 def get_all_projects() -> list[tuple[str, Path]]:
     """Return all AG projects as (name, path) tuples."""
-    projects = [("AG_Plantilla", PLANTILLA_DIR)]
+    projects = [("G_Plantilla", PLANTILLA_DIR)]
     for p_dir in PROJECTS_DIRS:
         if p_dir.is_dir():
             for d in sorted(p_dir.iterdir()):
-                if d.is_dir() and d.name.startswith("AG_"):
+                if d.is_dir() and d.name.startswith("G_"):
                     projects.append((d.name, d))
     return projects
 

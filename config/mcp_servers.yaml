@@ -1,4 +1,4 @@
-# MCP Server Configuration — AG_Plantilla
+# MCP Server Configuration — G_Plantilla
 # Model Context Protocol servers available for agent integrations.
 # See: docs/PLATFORM.md for vendor capabilities.
 
@@ -30,7 +30,7 @@ servers:
       [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "C:\\_Repositorio\\AG_Plantilla",
+        "C:\\_Repositorio\\G_Plantilla",
       ]
     capabilities:
       - read/write files within allowed paths

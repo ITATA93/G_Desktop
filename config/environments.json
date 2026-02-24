@@ -4,16 +4,16 @@
   "environments": {
     "notebook": {
       "base_path": "C:\\_Repositorio",
-      "projects_dirs": ["AG_Proyectos"],
-      "plantilla_dir": "AG_Plantilla",
+      "projects_dirs": ["G_Proyectos"],
+      "plantilla_dir": "G_Plantilla",
       "capabilities": ["git", "python", "docker"],
       "description": "Personal notebook - primary development",
       "is_default": true
     },
     "hetzner": {
       "base_path": "/opt/antigravity",
-      "projects_dirs": ["AG_Proyectos"],
-      "plantilla_dir": "AG_Plantilla",
+      "projects_dirs": ["G_Proyectos"],
+      "plantilla_dir": "G_Plantilla",
       "capabilities": ["git", "python", "docker", "proxmox"],
       "description": "Hetzner server - test environment"
     },
@@ -24,7 +24,7 @@
         "01_HOSPITAL_PRIVADO",
         "02_HOSPITAL_PUBLICO"
       ],
-      "plantilla_dir": "00_CORE\\AG_Plantilla",
+      "plantilla_dir": "00_CORE\\G_Plantilla",
       "capabilities": ["git", "python"]
     }
   },

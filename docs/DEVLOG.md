@@ -10,6 +10,15 @@ Todo pendiente va a `TASKS.md`.
 
 ---
 
+## 2026-02-24 — Governance Audit + Documentation Enhancement
+
+- Auditoria de gobernanza completada: README.md, CHANGELOG.md, GEMINI.md, .gemini/settings.json verificados
+- GEMINI.md expandido con identidad del proyecto, subagentes, principios, reglas absolutas y clasificador de complejidad
+- Archivo de workspace obsoleto eliminado (NOs.code-workspace)
+- Principios de desarrollo especificos: idempotencia, portabilidad, seguridad de dotfiles
+
+---
+
 ## 2026-02-23 — Migration from AG_Desktop
 
 - Project migrated from `AG_Desktop` to `G_Desktop` per ADR-0002.

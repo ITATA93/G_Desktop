@@ -25,7 +25,7 @@ try:
 
     REPO_ROOT = get_repo_root()
     PLANTILLA_DIR = get_plantilla_dir()
-except ImportError:
+except (ImportError, RuntimeError):
     REPO_ROOT = Path(r"C:\_Repositorio")
     PLANTILLA_DIR = REPO_ROOT / "G_Plantilla"
 

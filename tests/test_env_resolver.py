@@ -184,15 +184,15 @@ class TestDetectEnvironment:
 
 
 class TestGetRepoRoot:
-    """get_repo_root must exit(1) when the base_path doesn't exist."""
+    """get_repo_root must raise RuntimeError when the base_path doesn't exist."""
 
-    def test_exits_on_missing_base_path(self, tmp_path):
+    def test_raises_on_missing_base_path(self, tmp_path):
         fake_cfg = (
             "missing",
             {"base_path": str(tmp_path / "nonexistent_drive")},
         )
         with patch.object(env_resolver, "detect_environment", return_value=fake_cfg):
-            with pytest.raises(SystemExit):
+            with pytest.raises(RuntimeError, match="PATH UNREACHABLE"):
                 env_resolver.get_repo_root()
 
     def test_returns_path_when_exists(self, tmp_path):

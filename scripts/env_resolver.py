@@ -113,11 +113,9 @@ def get_repo_root() -> Path:
     _, env_cfg = detect_environment()
     base = Path(env_cfg["base_path"])
     if not base.exists():
-        print(
-            f"[CRITICAL: PATH UNREACHABLE] The base path {base} does not exist. Ensure the drive is mounted.",
-            file=sys.stderr,
+        raise RuntimeError(
+            f"[CRITICAL: PATH UNREACHABLE] The base path {base} does not exist. Ensure the drive is mounted."
         )
-        sys.exit(1)
     return base
 
 
@@ -136,20 +134,16 @@ def get_projects_dirs() -> list[Path]:
         dirs = [base / p for p in env_cfg["projects_dirs"]]
         for d in dirs:
             if not d.exists():
-                print(
-                    f"[CRITICAL: PATH UNREACHABLE] Legacy project dir {d} not found.",
-                    file=sys.stderr,
+                raise RuntimeError(
+                    f"[CRITICAL: PATH UNREACHABLE] Legacy project dir {d} not found."
                 )
-                sys.exit(1)
         return dirs
     if "projects_dir" in env_cfg:
         d = base / env_cfg["projects_dir"]
         if not d.exists():
-            print(
-                f"[CRITICAL: PATH UNREACHABLE] Legacy project dir {d} not found.",
-                file=sys.stderr,
+            raise RuntimeError(
+                f"[CRITICAL: PATH UNREACHABLE] Legacy project dir {d} not found."
             )
-            sys.exit(1)
         return [d]
     return []
 
@@ -165,11 +159,9 @@ def get_plantilla_dir() -> Path:
     # Fallback to legacy
     legacy_path = base / env_cfg["plantilla_dir"]
     if not legacy_path.exists():
-        print(
-            f"[CRITICAL: PATH UNREACHABLE] G_Plantilla not found at {plantilla_path} or {legacy_path}.",
-            file=sys.stderr,
+        raise RuntimeError(
+            f"[CRITICAL: PATH UNREACHABLE] G_Plantilla not found at {plantilla_path} or {legacy_path}."
         )
-        sys.exit(1)
     return legacy_path
 
 

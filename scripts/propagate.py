@@ -33,7 +33,7 @@ try:
     PROJECTS_DIRS = get_projects_dirs()
     PLANTILLA_DIR = get_plantilla_dir()
     TEMPLATE_DIR = get_template_dir()
-except ImportError:
+except (ImportError, RuntimeError):
     # Fallback if env_resolver is not in path
     REPO_ROOT = Path(r"C:\_Repositorio")
     PROJECTS_DIRS = [REPO_ROOT / "G_Proyectos"]

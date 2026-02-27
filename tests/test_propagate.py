@@ -30,18 +30,18 @@ import propagate
 
 
 class TestGetAllProjects:
-    def test_finds_ag_dirs(self, tmp_path):
+    def test_finds_g_dirs(self, tmp_path):
         domain = tmp_path / "01_DOMAIN"
-        (domain / "AG_Alpha").mkdir(parents=True)
-        (domain / "AG_Beta").mkdir(parents=True)
-        (domain / "NotAG").mkdir(parents=True)
+        (domain / "G_Alpha").mkdir(parents=True)
+        (domain / "G_Beta").mkdir(parents=True)
+        (domain / "NotG").mkdir(parents=True)
 
         with patch.object(propagate, "PROJECTS_DIRS", [domain]):
             result = propagate.get_all_projects()
         names = [name for name, _ in result]
-        assert "AG_Alpha" in names
-        assert "AG_Beta" in names
-        assert "NotAG" not in names
+        assert "G_Alpha" in names
+        assert "G_Beta" in names
+        assert "NotG" not in names
 
     def test_empty_when_dir_missing(self, tmp_path):
         with patch.object(propagate, "PROJECTS_DIRS", [tmp_path / "nope"]):

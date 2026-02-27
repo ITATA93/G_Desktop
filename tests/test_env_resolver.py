@@ -253,9 +253,9 @@ class TestListAgProjects:
     def test_finds_ag_projects(self, tmp_path):
         domain = tmp_path / "01_DOMAIN"
         domain.mkdir()
-        (domain / "AG_Alpha").mkdir()
-        (domain / "AG_Beta").mkdir()
-        (domain / "NotAnAG").mkdir()
+        (domain / "G_Alpha").mkdir()
+        (domain / "G_Beta").mkdir()
+        (domain / "NotAG").mkdir()
 
         with (
             patch.object(
@@ -264,9 +264,9 @@ class TestListAgProjects:
         ):
             projects = env_resolver.list_ag_projects()
         names = [p.name for p in projects]
-        assert "AG_Alpha" in names
-        assert "AG_Beta" in names
-        assert "NotAnAG" not in names
+        assert "G_Alpha" in names
+        assert "G_Beta" in names
+        assert "NotAG" not in names
 
     def test_empty_when_no_domains(self, tmp_path):
         with patch.object(env_resolver, "get_projects_dirs", return_value=[]):

@@ -79,9 +79,9 @@ class TestGetNextTaskId:
 
 class TestFindProjectRoot:
     def test_finds_plantilla(self, tmp_path):
-        with patch.object(cross_task, "PLANTILLA_DIR", tmp_path / "AG_Plantilla"):
-            result = cross_task.find_project_root("AG_Plantilla")
-        assert result == tmp_path / "AG_Plantilla"
+        with patch.object(cross_task, "PLANTILLA_DIR", tmp_path / "G_Plantilla"):
+            result = cross_task.find_project_root("G_Plantilla")
+        assert result == tmp_path / "G_Plantilla"
 
     def test_exact_match_in_projects_dir(self, tmp_path):
         domain = tmp_path / "01_DOMAIN"
